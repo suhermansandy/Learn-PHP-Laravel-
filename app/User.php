@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function berita()
+    {
+        return $this->hasMany(Berita::class, 'created_by', 'id');
+    }
 }
